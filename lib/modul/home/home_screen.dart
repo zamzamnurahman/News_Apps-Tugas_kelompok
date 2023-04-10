@@ -68,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 )),
             Card(
               child: ListTile(
+<<<<<<< HEAD
                 onTap: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
@@ -76,6 +77,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   }));
                 },
+=======
+                onTap: () {},
+>>>>>>> af46f55 (update)
                 leading: Icon(Icons.person),
                 title: Text("Profile"),
               ),
