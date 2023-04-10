@@ -4,9 +4,18 @@ import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../../models/news.dart';
 
-class NewsDetailScreen extends StatelessWidget {
+class NewsDetailScreen extends StatefulWidget {
   NewsDetailScreen({super.key, this.news});
   News? news;
+
+  @override
+  State<NewsDetailScreen> createState() => _NewsDetailScreenState();
+}
+
+class _NewsDetailScreenState extends State<NewsDetailScreen> {
+  int likes=0;
+  int comment=0;
+  int send=0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,41 +29,69 @@ class NewsDetailScreen extends StatelessWidget {
             AspectRatio(
                 aspectRatio: 16 / 9,
                 child: Image.network(
-                  news!.image!,
+                  widget.news!.image!,
                   fit: BoxFit.cover,
                 )),
             Padding(
               padding: EdgeInsets.symmetric(vertical: size.height * 0.015),
               child: Text(
-                news!.title!,
+                widget.news!.title!,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
             ),
             Text(
-              news!.description!,
+              widget.news!.description!,
               textAlign: TextAlign.justify,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    )),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.message_outlined,
-                      color: Colors.amber,
-                    )),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.send_sharp,
-                      color: Colors.black,
-                    ))
+                Column(
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          setState(() {
+                            likes++;
+                          });
+                        },
+                        icon: Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                        )),
+                        Text(likes.toString())
+                  ],
+                ),
+                Column(
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          setState(() {
+                            comment++;
+                          });
+                        },
+                        icon: Icon(
+                          Icons.message_outlined,
+                          color: Colors.amber,
+                        )),
+                        Text(comment.toString()),
+                  ],
+                ),
+                        
+                Column(
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          setState(() {
+                            send++;
+                          });
+                        },
+                        icon: Icon(
+                          Icons.send_sharp,
+                          color: Colors.black,
+                        )),
+                        Text(send.toString())
+                  ],
+                )
               ],
             )
           ]),
