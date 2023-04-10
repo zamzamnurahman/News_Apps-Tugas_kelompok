@@ -70,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Card(
               child: ListTile(
                 onTap: () {},
+
                 leading: Icon(Icons.person),
                 title: Text("Profile"),
               ),
