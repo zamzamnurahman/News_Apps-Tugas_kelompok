@@ -1,11 +1,22 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/material.dart';
+import 'package:navigator_apps/models/user.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({
+    super.key,
+    required this.user,
+  });
+  final User user;
 
   @override
+  State<ProfileScreen> createState() => _ProfilScreenState();
+}
+
+class _ProfilScreenState extends State<ProfileScreen> {
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: Center(child: Text("profile Detail Screen")),
+    );
   }
 }
