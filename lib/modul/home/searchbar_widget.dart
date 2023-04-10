@@ -23,7 +23,7 @@ class SearchbarWidget extends StatelessWidget {
               vertical: 0,
               horizontal: 10,
             ),
-            hintText: "Masukkan Kata kunci Disini",
+            hintText: "Search",
             hintStyle: const TextStyle(fontSize: 12),
             border: OutlineInputBorder(
               borderSide: BorderSide.none,
