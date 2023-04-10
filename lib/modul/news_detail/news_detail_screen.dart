@@ -10,13 +10,16 @@ class NewsDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size=MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(title: Text("News Detail")),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(size.width *0.05),
           child: Column(children: [
-            Image.network(news!.image!), 
+            AspectRatio(
+              aspectRatio: 16/9,
+              child: Image.network(news!.image!,fit: BoxFit.cover,)), 
             Text(news!.title!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
             Text(news!.description!, textAlign: TextAlign.justify,),
             Row(
