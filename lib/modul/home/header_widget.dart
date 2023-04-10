@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigator_apps/modul/profil/profil_screen.dart';
 
 import 'home_screen.dart';
 
@@ -19,8 +20,16 @@ class HeaderWidget extends StatelessWidget {
           style: const TextStyle(
             fontWeight: FontWeight.bold,
           )),
-      trailing: CircleAvatar(
-        foregroundImage: NetworkImage(data.user.profileImage!),
+      trailing: GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ProfileScreen(user: data.user)));
+        },
+        child: CircleAvatar(
+          foregroundImage: NetworkImage(data.user.profileImage!),
+        ),
       ),
     );
   }
