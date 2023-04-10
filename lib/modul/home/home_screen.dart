@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:navigator_apps/modul/menu/menu_screen.dart';
+import 'package:navigator_apps/modul/profile/profile_screen.dart';
 
 import '../../models/user.dart';
 import '../profil/profil_screen.dart';
@@ -68,12 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 )),
             Card(
               child: ListTile(
-                onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return ProfileScreen(user: widget.user);
-                  }));
-                },
+                onTap: () {},
+
                 leading: Icon(Icons.person),
                 title: Text("Profile"),
               ),
