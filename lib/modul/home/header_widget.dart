@@ -13,7 +13,8 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: const Text("Hi, Selamat Datang", style: TextStyle(fontSize: 12)),
+      title:
+          const Text("Hallo, Selamat Datang", style: TextStyle(fontSize: 12)),
       subtitle: Text(data.user.name,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
