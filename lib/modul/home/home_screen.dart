@@ -5,6 +5,7 @@ import 'package:navigator_apps/modul/menu/menu_screen.dart';
 import 'package:navigator_apps/modul/profile/profile_screen.dart';
 
 import '../../models/user.dart';
+import '../profil/profil_screen.dart';
 import 'header_widget.dart';
 import 'hotnews_widget.dart';
 import 'lates_news_widget.dart';
