@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:navigator_apps/config/app_routes.dart';
+import 'package:flutter/services.dart';
+import '/config/app_routes.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
   runApp(const MainApp());
 }
 
@@ -15,10 +22,8 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.white,
-        ///[* warna background canvas]
-        /// scaffoldBackgroundColor: Colors.blue
       ),
-      title: "Apps Pertemuan 5",
+      title: "News Apps",
       routeInformationProvider: AppRoutes.goRouter.routeInformationProvider,
       routerDelegate: AppRoutes.goRouter.routerDelegate,
       routeInformationParser: AppRoutes.goRouter.routeInformationParser,

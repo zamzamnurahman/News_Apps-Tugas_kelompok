@@ -1,11 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:navigator_apps/modul/menu/menu_screen.dart';
-import 'package:navigator_apps/modul/profile/profile_screen.dart';
+import '/modul/news/menu_screen.dart';
 
 import '../../models/user.dart';
-import '../profil/profil_screen.dart';
 import 'header_widget.dart';
 import 'hotnews_widget.dart';
 import 'lates_news_widget.dart';
@@ -21,25 +17,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  ScrollController _scrollController = ScrollController();
   int _tabIndex = 0;
   _selectedTabIndex(int value) {
     setState(() {
       _tabIndex = value;
     });
-  }
-
-  @override
-  void initState() {
-    _scrollController.addListener(() {
-      log(_scrollController.offset.toString());
-      print(_scrollController.offset.toString());
-      if (_scrollController.offset ==
-          _scrollController.position.maxScrollExtent) {
-        print("Get data terbaru");
-      }
-    });
-    super.initState();
   }
 
   @override
@@ -70,9 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
             Card(
               child: ListTile(
                 onTap: () {},
-
-                leading: Icon(Icons.person),
-                title: Text("Profile"),
+                leading: const Icon(Icons.person),
+                title: const Text("Profile"),
               ),
             )
           ],
@@ -83,7 +64,6 @@ class _HomeScreenState extends State<HomeScreen> {
           index: _tabIndex,
           children: [
             SingleChildScrollView(
-              controller: _scrollController,
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [

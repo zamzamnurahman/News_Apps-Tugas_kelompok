@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:navigator_apps/modul/profil/profil_screen.dart';
+import '/modul/profil/profil_screen.dart';
 
 import 'home_screen.dart';
 
