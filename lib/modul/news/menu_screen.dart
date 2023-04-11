@@ -3,6 +3,7 @@ import '/data/news_data.dart';
 import '/models/news.dart';
 import '/widget/news_item_widget.dart';
 
+
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
 
