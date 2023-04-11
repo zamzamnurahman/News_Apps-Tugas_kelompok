@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:navigator_apps/models/news.dart';
 
 import '../../data/news_data.dart';
 import '../../widget/news_item_widget.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:navigator_apps/models/news.dart';
-import 'package:navigator_apps/modul/home/home_screen.dart';
+import '/models/news.dart';
+import '/modul/home/home_screen.dart';
 // import 'package:navigator_apps/modul/news_detail/new_detail_screen.dart';
 
 import '../models/user.dart';

@@ -1,7 +1,14 @@
-# navigator_apps
+# News Apps
 
-praktikum pertemuan ke 05
-membahasa mengenai layouting dan navigator 2.0
+## Tugas Kelompok Praktikum Pemrograman Mobile
+Evaluasi Praktikum Pemrograman Mobile - News Apps
+
+Anggota Kelompok :
+
+1. Anas Nasruloh
+2. Putri Zakiyah
+3. Syifa Fauziah
+4. Zamzam Nurahman
 
 
   depedencies :  
