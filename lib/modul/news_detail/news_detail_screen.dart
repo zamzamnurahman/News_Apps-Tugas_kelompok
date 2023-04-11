@@ -13,9 +13,9 @@ class NewsDetailScreen extends StatefulWidget {
 }
 
 class _NewsDetailScreenState extends State<NewsDetailScreen> {
-  int likes=0;
-  int comment=0;
-  int send=0;
+  int likes = 0;
+  int comment = 0;
+  int send = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                           Icons.favorite,
                           color: Colors.red,
                         )),
-                        Text(likes.toString())
+                    Text(likes.toString())
                   ],
                 ),
                 Column(
@@ -73,10 +73,9 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                           Icons.message_outlined,
                           color: Colors.amber,
                         )),
-                        Text(comment.toString()),
+                    Text(comment.toString()),
                   ],
                 ),
-                        
                 Column(
                   children: [
                     IconButton(
@@ -89,7 +88,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                           Icons.send_sharp,
                           color: Colors.black,
                         )),
-                        Text(send.toString())
+                    Text(send.toString())
                   ],
                 )
               ],
