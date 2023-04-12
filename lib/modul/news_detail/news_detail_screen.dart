@@ -23,6 +23,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
     return Scaffold(
       appBar: AppBar(title: Text("News Detail")),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Padding(
           padding: EdgeInsets.all(size.width * 0.05),
           child: Column(children: [

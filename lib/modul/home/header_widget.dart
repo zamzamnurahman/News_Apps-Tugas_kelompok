@@ -1,34 +1,30 @@
 import 'package:flutter/material.dart';
-import '/modul/profil/profil_screen.dart';
-
-import 'home_screen.dart';
+import 'package:go_router/go_router.dart';
+import 'package:news_apps/models/user.dart';
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({
+  HeaderWidget({
     super.key,
     required this.data,
   });
 
-  final HomeScreen data;
+  User data;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title:
           const Text("Hallo, Selamat Datang", style: TextStyle(fontSize: 12)),
-      subtitle: Text(data.user.name,
+      subtitle: Text(data.name,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
           )),
       trailing: GestureDetector(
         onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => ProfileScreen(user: data.user)));
+          GoRouter.of(context).pushNamed("profile", extra: data);
         },
         child: CircleAvatar(
-          foregroundImage: NetworkImage(data.user.profileImage!),
+          foregroundImage: NetworkImage(data.profileImage!),
         ),
       ),
     );

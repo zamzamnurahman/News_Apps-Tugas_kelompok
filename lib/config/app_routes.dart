@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:news_apps/modul/profil/profil_screen.dart';
 import '/models/news.dart';
 import '/modul/home/home_screen.dart';
 // import 'package:navigator_apps/modul/news_detail/new_detail_screen.dart';
@@ -71,6 +72,27 @@ class AppRoutes {
     }
   }
 
+  static Page _profileRouteBuilder(
+    BuildContext context,
+    GoRouterState state,
+  ) {
+    late User user;
+    if (state.extra != null && state.extra is User) {
+      user = state.extra as User;
+    } else {
+      user = User(
+        id: 000,
+        name: "No name",
+        userName: "no name",
+        email: "email@example.com",
+        profileImage:
+            "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+        phoneNumber: "+123456789",
+      );
+    }
+    return MaterialPage(child: ProfileScreen(user: user));
+  }
+
   static final GoRouter goRouter = GoRouter(
     routerNeglect: true,
     routes: [
@@ -88,6 +110,11 @@ class AppRoutes {
         name: newDetail,
         path: "/news-detail/:id",
         pageBuilder: _newDetailRouteBuilder,
+      ),
+      GoRoute(
+        name: profile,
+        path: "/profile",
+        pageBuilder: _profileRouteBuilder,
       ),
     ],
     initialLocation: "/splash",

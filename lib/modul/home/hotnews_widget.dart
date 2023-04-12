@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_apps/models/news.dart';
+import '../news/news_screen.dart';
 import '/data/news_data.dart';
 
 class HotNewsWidget extends StatefulWidget {
@@ -26,7 +27,16 @@ class _HotNewsWidgetState extends State<HotNewsWidget> {
               Icons.arrow_forward_ios,
               size: 15,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return Scaffold(
+                  appBar: AppBar(
+                    title: const Text("News"),
+                  ),
+                  body: const NewsScreen(),
+                );
+              }));
+            },
           ),
         ),
         SizedBox(
@@ -68,7 +78,7 @@ class DotWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       child: CircleAvatar(
         radius: 5,
         backgroundColor: itemIndex == index ? Colors.black : Colors.grey,

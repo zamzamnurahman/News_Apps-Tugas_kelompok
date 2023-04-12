@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '/modul/news/menu_screen.dart';
+import 'package:news_apps/modul/menu/menu_screen.dart';
+import '../news/news_screen.dart';
 
 import '../../models/user.dart';
 import 'header_widget.dart';
@@ -67,13 +68,14 @@ class _HomeScreenState extends State<HomeScreen> {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  HeaderWidget(data: widget),
+                  HeaderWidget(data: widget.user),
                   const SearchbarWidget(),
                   const HotNewsWidget(),
                   const LatesNewsWidget()
                 ],
               ),
             ),
+            const NewsScreen(),
             const MenuScreen(),
           ],
         ),

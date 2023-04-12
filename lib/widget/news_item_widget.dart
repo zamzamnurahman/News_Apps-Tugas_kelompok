@@ -28,7 +28,12 @@ class NewsItemWidget extends StatelessWidget {
           vertical: 10,
           horizontal: 5,
         ),
-        leading: Image.network(news.image!),
+        leading: AspectRatio(
+            aspectRatio: 16 / 9,
+            child: Image.network(
+              news.image!,
+              fit: BoxFit.cover,
+            )),
         title: Text(news.title!),
         subtitle: Text(
           news.description!,
